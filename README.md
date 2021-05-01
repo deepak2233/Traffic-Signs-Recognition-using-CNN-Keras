@@ -60,8 +60,7 @@ The dataset contains more than 50,000 images of different traffic signs. It is f
 
 ## APP
 
-<p align = 'center'>
-  ![Traffic sign](https://github.com/deepak2233/Traffic-Signs-Recognition-using-CNN-Keras/blob/main/Support/Traffic%20sign.gif)
-</p>
+![Traffic sign](https://github.com/deepak2233/Traffic-Signs-Recognition-using-CNN-Keras/blob/main/Support/Traffic%20sign.gif)
+
 
 
