@@ -61,7 +61,7 @@ The dataset contains more than 50,000 images of different traffic signs. It is f
 ## APP
 
 <p align = 'center'>
-  <img src = './Support/Treffic sign.png' align = 'center'>
+  <img src = './Support/Treffic sign.gif' align = 'center'>
 </p>
 
 
