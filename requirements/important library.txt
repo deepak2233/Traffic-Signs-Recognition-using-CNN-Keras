@@ -1,0 +1,9 @@
+!pip install tensorflow keras sklearn matplotlib pandas pil
+!pip install visualkeras
+import visualkeras
+import numpy as np 
+import pandas as pd 
+import matplotlib.pyplot as plt
+import cv2
+import tensorflow as tf
+from PIL import Image
