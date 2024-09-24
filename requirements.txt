@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+seaborn
+tensorflow
+streamlit
+pillow
+argparse

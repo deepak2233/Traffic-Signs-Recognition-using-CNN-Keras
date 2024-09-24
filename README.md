@@ -1,66 +1,115 @@
-# Traffic Signs Recognition using CNN Keras
+# Traffic Sign Recognition
 
-- Probelm Statement
-- DataSets
-- Model
-- Traing accuracy
-- Evalution on testing
-- GUI App Using TkInter
+## Overview 
+This project implements a Traffic Sign Recognition system using Convolutional Neural Networks (CNN) to classify images of traffic signs. The aim is to build an automated system that accurately recognizes and classifies various traffic signs from images, contributing to the development of advanced driver-assistance systems (ADAS) and autonomous vehicles.
 
-## Problem Statement
-In the world of Artificial Intelligence and advancement in technologies, many researchers and big companies like Tesla, Uber, Google, Mercedes-Benz, Toyota, Ford, Audi, etc are working on autonomous vehicles and self-driving cars. So, for achieving accuracy in this technology, the vehicles should be able to interpret traffic signs and make decisions accordingly.
+### Problem Statement
+Traffic signs are critical for ensuring road safety as they convey essential information to drivers. An automated recognition system can help improve safety and efficiency on the roads. For example, a system should recognize a "Stop" sign and alert the driver to stop the vehicle, thereby preventing accidents.
 
----
-## What is Traffic Signs Recognition?
-There are several different types of traffic signs like speed limits, no entry, traffic signals, turn left or right, children crossing, no passing of heavy vehicles, etc. Traffic signs classification is the process of identifying which class a traffic sign belongs to
+### Example Images
+- **Stop Sign**:  
+  ![Stop Sign](data/Test/00111.png)
 
----
-## Traffic Signs Recognition – About the Python Project
-In this Python project example, we will build a deep neural network model that can classify traffic signs present in the image into different categories. With this model, we are able to read and understand traffic signs which are a very important task for all autonomous vehicles.
+- **Yield Sign**:  
+  ![Yield Sign](data/Test/00120.png)
 
----
-## The Dataset of Python Project
-For this project, we are using the public dataset available at Kaggle:
-[Traffic Signs Dataset](https://www.kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign/code)
+- **Speed Limit Sign**:  
+  ![Speed Limit Sign](data/Test/00122.png)
 
-<p align = 'center'>
-  <img src = './Support/6.png' align = 'center'>
-</p>
+## Datasets
+The dataset used for this project is the **German Traffic Sign Recognition Benchmark (GTSRB)**. It contains over 50,000 images categorized into 43 classes of traffic signs.
 
-The dataset contains more than 50,000 images of different traffic signs. It is further classified into 43 different classes. The dataset is quite varying, some of the classes have many images while some classes have few images. The size of the dataset is around 300 MB. The dataset has a train folder which contains images inside each class and a test folder which we will use for testing our model.
+### Dataset Structure
+```
+data/ 
+    ├── Train/ # Contains train images organized by class
+    ├── Test/ # Contains test images organized by class
+    
+```
+### CSV Files
+- **`Train.csv`**: Contains paths and labels for the training set.
+- **`Test.csv`**: Contains paths and labels for the test set.
 
----
-## Model
-- Explore the dataset
-- Build a CNN model
-- Train and validate the model
-- Test the model with test dataset
+## Project Structure
 
----
+```
+    traffic-sign-recognition/
+    │
+    ├── data/
+    │   ├── Meta/
+    │   ├── Test/
+    │   ├── Train/
+    │   └── ...
+    ├── scripts/
+    │   ├── data_preprocessing.py
+    │   ├── eda.py
+    │   ├── model_training.py
+    │   ├── evaluation.py
+    │   ├── inference.py
+    │   └── streamlit_app.py
+    ├── main.py
+    ├── requirements.txt
+    └── README.md
+```
 
-## OUTPUT
-<p align = 'center'>
-  <img src = './Support/1.png' align = 'center'>
-</p>
+## Setup and Installation
+1. **Clone the Repository**:
+   ```bash
+       git clone <repository-url>
+       cd traffic-sign-recognition
+        python3 -m venv env
+        source env/bin/activate  # On Windows use `env\Scripts\activate`
+        pip install -r requirements.txt
 
-<p align = 'center'>
-  <img src = './Support/2.png' align = 'center'>
-</p>
+# Usage
+
+### Data Preprocessing
+
+To preprocess the dataset:
+```
+    python main.py --data --data_dir data
+```
+
+### Exploratory Data Analysis (EDA)
+To generate visualizations and understand the dataset:
+```
+python main.py --eda --data_dir data --output_dir outputs
+
+```
+
+### Model Training
+To train the CNN model on the preprocessed data:
+
+```
+python main.py --training --data_dir data --model_dir models --epochs 20 --batch_size 64 --learning_rate 0.001
+```
+
+### Model Evaluation
+To evaluate the trained model:
+```
+python main.py --evaluation --data_dir data --model_dir models --output_dir outputs
+```
+
+### Inference
+To make predictions on new images:
+
+```
+python main.py --inference --model_dir models --image_path path/to/image.jpg
+
+```
+
+### Streamlit Application
+To launch the Streamlit application for interactive traffic sign recognition:
+
+```
+streamlit run scripts/streamlit_app.py -- --model_path models/best_model.h5
+```
 
 
-<p align = 'center'>
-  <img src = './Support/3.png' align = 'center'>
-</p>
+### Notes
+- **Image Paths**: Ensure to replace `data/Train/00000.png`, etc., with actual paths to your images.
+- **Repository URL**: Replace `<repository-url>` with the actual URL of your GitHub repository.
+- **License**: Ensure you have a LICENSE file if you include a license section.
 
-
-<p align = 'center'>
-  <img src = './Support/4.png' align = 'center'>
-</p>
-
-
-## APP
-
-![Traffic sign](https://github.com/deepak2233/Traffic-Signs-Recognition-using-CNN-Keras/blob/main/Support/Traffic%20sign.gif)
-
-
+This `README.md` provides a comprehensive overview of your project, making it easy for users to understand its purpose and how to use it effectively. Let me know if you need further adjustments or additions!
 
